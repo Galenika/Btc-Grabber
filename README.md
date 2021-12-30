@@ -1,3 +1,3 @@
 # Btc-Grabber
- * Crypto Grabber is a technique used to steal crypto by manipulating in clipboard 
+ * Btc Grabber is a technique used to steal Bitcoin by manipulating in clipboard 
  * i implemented Thread Hijack technique to make it more powerful and hard To detect
