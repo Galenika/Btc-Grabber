@@ -50,7 +50,7 @@ END
 // grabber_bin
 //
 
-IDR_GRABBER_BIN1        grabber_bin             "C:\\Users\\anas\\Pictures\\4ch\\4ch\\New folder\\btc_grabber"
+IDR_GRABBER_BIN1        grabber_bin             "\\btc_grabber" // shellcode path
 
 #endif    // English (United States) resources
 /////////////////////////////////////////////////////////////////////////////
