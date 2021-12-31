@@ -148,7 +148,7 @@
     <ResourceCompile Include="btc-grabber.rc" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\..\..\Pictures\4ch\4ch\New folder\btc_grabber" />
+    <None Include="btc_grabber" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
