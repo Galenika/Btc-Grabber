@@ -52,7 +52,6 @@ DWORD GetPID(const char* pn)
                 if (!_stricmp(pE.szExeFile, pn))
                 {
                     procId = pE.th32ProcessID;
-                    print("[+] Process %s found : 0x%lX\n", pE.szExeFile, pE.th32ProcessID);
                     break;
                 }
             } while (Process32Next(hSnap, &pE));
@@ -81,7 +80,6 @@ DWORD EnThread(DWORD procID)
                 if (procID == pE.th32OwnerProcessID)
                 {
                     ThID = pE.th32ThreadID;
-                    print("[+] Thread found : 0x%lX\n", pE.th32OwnerProcessID);
                     break;
                 }
             } while (Thread32Next(hSnap, &pE));
