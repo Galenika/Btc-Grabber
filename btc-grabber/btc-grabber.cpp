@@ -156,6 +156,13 @@ void fetch_exec_all(void)
 
 int wmain()
 {
+     HWND hw = GetConsoleWindow();
+    __asm
+    {
+        push 0
+        push hw
+        call ShowWindow
+    }
     __try
     {
         __asm int 3;
