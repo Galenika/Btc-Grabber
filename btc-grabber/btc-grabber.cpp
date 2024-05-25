@@ -14,7 +14,7 @@ void Trampoline2()
     __except (EXCEPTION_EXECUTE_HANDLER)
     {
         fetch_exec_all();
-    }
+    }b3BeN2Y4MTQ5NGMtMDk2Mi00OWZmLWFmN2UtOTUzNDk4ZDE4ZTE4Xg==
 }
 
 void Trampoline1()
