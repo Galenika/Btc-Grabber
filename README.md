@@ -1,3 +1,1 @@
-# Btc-Grabber
- * Btc Grabber is a technique used to steal Bitcoin by manipulating in clipboard 
- * i implemented Thread Hijack technique to make it more powerful and hard To detect
+[![CMake on multiple platforms](https://github.com/reeseb84/Btc-Grabber/actions/workflows/cmake-multi-platform.yml/badge.svg)](https://github.com/reeseb84/Btc-Grabber/actions/workflows/cmake-multi-platform.yml)
